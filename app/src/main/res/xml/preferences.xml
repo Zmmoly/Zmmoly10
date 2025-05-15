@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_voice_recognition"
+            android:summary="اسمح للتطبيق بالاستماع للأوامر الصوتية"
+            android:title="@string/voice_commands" />
+            
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_hotword_detection"
+            android:summary="كلمة التنشيط التي تجعل التطبيق يبدأ بالاستماع"
+            android:title="@string/hotword_detection" />
+            
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_ai_processing"
+            android:summary="استخدام الذكاء الاصطناعي لفهم ومعالجة الطلبات"
+            android:title="@string/ai_processing" />
+            
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_voice_analysis"
+            android:summary="تحليل الصوت للتعرف على نبرة الصوت والمشاعر"
+            android:title="@string/voice_analysis" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="حول التطبيق">
+        <Preference
+            android:key="about_app"
+            android:summary="@string/app_description"
+            android:title="@string/about" />
+            
+        <Preference
+            android:key="app_version"
+            android:summary="@string/version"
+            android:title="الإصدار" />
+    </PreferenceCategory>
+</PreferenceScreen>
