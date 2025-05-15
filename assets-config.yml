@@ -1,0 +1,30 @@
+# ملف تكوين لأصول زمولي الكبيرة
+# تم إنشاؤه تلقائياً بواسطة عمر
+# تم تحديثه لدعم مجلد temp_models
+
+# معلومات الإصدار
+releaseTag: assets-522032
+releaseUrl: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/tag/assets-522032
+
+# روابط تنزيل الملفات الكبيرة
+app/ml/model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/model.tflite
+app/src/main/assets/arabic_dialect_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/arabic_dialect_model.tflite
+app/src/main/assets/logical_reasoning_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/logical_reasoning_model.tflite
+app/src/main/assets/medical_analyzer_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/medical_analyzer_model.tflite
+app/src/main/assets/voice_emotion_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/voice_emotion_model.tflite
+app/src/main/assets/labels.txt: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/labels.txt
+
+# روابط لنفس الملفات ولكن في مجلد temp_models (المسار الذي يبحث فيه الكود)
+app/src/main/assets/temp_models/arabic_dialect_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/arabic_dialect_model.tflite
+app/src/main/assets/temp_models/logical_reasoning_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/logical_reasoning_model.tflite
+app/src/main/assets/temp_models/medical_analyzer_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/medical_analyzer_model.tflite
+app/src/main/assets/temp_models/voice_emotion_model.tflite: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/voice_emotion_model.tflite
+app/src/main/assets/temp_models/labels.txt: https://github.com/Zmmoly/zamouli-ai-assistant-520319/releases/download/assets-522032/labels.txt
+
+# تعليمات التحميل
+# يمكن استخدام هذه الروابط لتنزيل الملفات الكبيرة مثل نماذج التعلم الآلي
+# تم إضافة نسخة إضافية من النماذج في المجلد temp_models لتتوافق مع مسارات الكود
+
+# معلومات إضافية
+تاريخ_الإنشاء: 2025-05-10T09:32:32.047Z
+تاريخ_التحديث: 2025-05-15T10:00:00.000Z
