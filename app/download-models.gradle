@@ -1,0 +1,79 @@
+import groovy.yaml.YamlSlurper
+
+/**
+ * سكريبت Gradle لتنزيل نماذج الذكاء الاصطناعي لتطبيق زمولي
+ * يقرأ ملف assets-config.yml ويقوم بتنزيل النماذج المختلفة قبل بناء APK
+ * يستخدم Ant للتنزيل بشكل مباشر وبسيط
+ */
+
+// مهمة لتنزيل نماذج الذكاء الاصطناعي
+task downloadMLModels {
+    description = "تنزيل نماذج الذكاء الاصطناعي لتطبيق زمولي من GitHub Releases"
+    group = "زمولي"
+    
+    doLast {
+        def configFile = file("${rootDir}/assets-config.yml")
+        
+        if (!configFile.exists()) {
+            println "خطأ: ملف assets-config.yml غير موجود!"
+            throw new GradleException("ملف assets-config.yml غير موجود في ${rootDir}")
+        }
+        
+        println "بدء تنزيل نماذج الذكاء الاصطناعي..."
+        
+        try {
+            // قراءة ملف التكوين YAML
+            def config = new YamlSlurper().parse(configFile)
+            
+            // استخراج روابط التنزيل من ملف التكوين
+            // نختار فقط العناصر التي تكون مفاتيحها مسارات ملفات وقيمها روابط HTTP
+            def downloadItems = config.findAll { key, value -> 
+                key instanceof String && 
+                value instanceof String && 
+                value.startsWith("http") &&
+                (key.endsWith(".tflite") || key.endsWith(".txt") || key.contains("/assets/"))
+            }
+            
+            // عرض عدد الملفات المراد تنزيلها
+            println "وجدت ${downloadItems.size()} ملفات للتنزيل..."
+            
+            // تنزيل كل ملف بالترتيب
+            downloadItems.each { filePath, url ->
+                def destFile = file("${rootDir}/${filePath}")
+                
+                // التحقق من وجود الملف قبل التنزيل
+                if (destFile.exists()) {
+                    println "✓ الملف ${destFile.name} موجود بالفعل (تم تخطيه)"
+                    return
+                }
+                
+                // إنشاء المجلدات اللازمة
+                destFile.parentFile.mkdirs()
+                
+                println "تنزيل ${destFile.name} من ${url}..."
+                
+                // استخدام Ant Get لتنزيل الملف
+                ant.get(src: url, dest: destFile.absolutePath, verbose: true)
+                
+                println "✓ تم تنزيل ${destFile.name} بنجاح"
+            }
+            
+            println "✓ اكتمل تنزيل جميع نماذج الذكاء الاصطناعي!"
+            
+        } catch (Exception e) {
+            println "× حدث خطأ أثناء تنزيل النماذج: ${e.message}"
+            throw new GradleException("فشل تنزيل نماذج الذكاء الاصطناعي: ${e.message}")
+        }
+    }
+}
+
+// جعل مهمة تنزيل النماذج تعمل قبل مهام البناء
+tasks.whenTaskAdded { task ->
+    if (task.name == 'processDebugResources' || 
+        task.name == 'processReleaseResources' ||
+        task.name == 'assembleDebug' ||
+        task.name == 'assembleRelease') {
+        
+        task.dependsOn downloadMLModels
+    }
+}
