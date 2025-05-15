@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">زمولي</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="hello_world">مرحبا بالعالم</string>
+    <string name="start_listening">بدء الاستماع</string>
+    <string name="stop_listening">إيقاف الاستماع</string>
+    <string name="welcome_message">مرحباً بك في زمولي، مساعدك الذكي</string>
+    <string name="loading">جار التحميل…</string>
+    <string name="error_occurred">حدث خطأ</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="continue_text">متابعة</string>
+    <string name="ok">موافق</string>
+    <string name="permissions_required">الأذونات المطلوبة</string>
+    <string name="permissions_message">يحتاج التطبيق إلى الأذونات التالية للعمل بشكل صحيح</string>
+    <string name="microphone_permission">إذن الميكروفون</string>
+    <string name="storage_permission">إذن التخزين</string>
+    <string name="location_permission">إذن الموقع</string>
+    <string name="camera_permission">إذن الكاميرا</string>
+    <string name="accessibility_permission">إذن الوصول</string>
+    <string name="allow">السماح</string>
+    <string name="deny">منع</string>
+    <string name="permission_denied">تم رفض الإذن</string>
+    <string name="permission_denied_message">لا يمكن للتطبيق العمل بشكل صحيح بدون هذه الأذونات</string>
+    <string name="settings">الإعدادات</string>
+    <string name="voice_commands">الأوامر الصوتية</string>
+    <string name="accessibility_service_description">خدمة وصول زمولي للمساعدة في استخدام الجهاز</string>
+    <string name="hotword_detection">اكتشاف الكلمات المفتاحية</string>
+    <string name="ai_processing">معالجة الذكاء الاصطناعي</string>
+    <string name="voice_analysis">تحليل الصوت</string>
+    <string name="enable">تفعيل</string>
+    <string name="disable">تعطيل</string>
+    <string name="enabled">مفعل</string>
+    <string name="disabled">معطل</string>
+    <string name="about">حول التطبيق</string>
+    <string name="version">الإصدار 1.0</string>
+    <string name="app_description">مساعد ذكي يعمل بتقنية الذكاء الاصطناعي للغة العربية</string>
+    <string name="listening">جار الاستماع…</string>
+    <string name="processing">جار المعالجة…</string>
+    <string name="speak_now">تحدث الآن</string>
+    <string name="not_recognized">لم يتم التعرف على الكلام</string>
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
+    <string name="check_connection">تحقق من اتصالك بالإنترنت</string>
+</resources>
