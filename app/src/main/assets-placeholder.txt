@@ -1,0 +1,9 @@
+هذا الملف هو علامة للحفاظ على هيكل المجلدات في git.
+سيتم تنزيل نماذج الذكاء الاصطناعي إلى هذا المجلد عند تنفيذ سكريبت التنزيل.
+
+النماذج المتوقعة:
+- logical_reasoning_model.tflite
+- arabic_dialect_model.tflite
+- medical_analyzer_model.tflite
+- voice_emotion_model.tflite
+- labels.txt
