@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+// إضافة مهمة لتنزيل نماذج الذكاء الاصطناعي
+task downloadMLModels {
+    description "تشغيل مهمة تنزيل نماذج الذكاء الاصطناعي للتطبيق"
+    group "زمولي"
+    
+    doLast {
+        println "تشغيل مهمة تنزيل النماذج من المجلد الرئيسي..."
+        println "استخدم هذه المهمة لتنزيل النماذج يدويًا، أو قم ببناء التطبيق لتنزيلها تلقائيًا."
+        
+        // استدعاء مهمة تنزيل النماذج من مشروع التطبيق
+        project(':app').tasks.downloadMLModels.execute()
+    }
+}
